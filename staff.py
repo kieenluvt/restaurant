@@ -1,9 +1,8 @@
 from menu_order import list_orders
-from customer import customer_order
 from table import see_table, table_data
-def staff_menu():
+def staff_menu(staff):
     while True:
-        print("\n NHIỆM VỤ NHÂN VIÊN")
+        print("\n===== NHIỆM VỤ NHÂN VIÊN =====")
         print("1. Xem các đơn hàng")
         print("2. Cập nhật trạng thái đơn hàng")
         print("3. Chỉ định bàn cho đơn hàng")
@@ -14,7 +13,7 @@ def staff_menu():
             if not list_orders:
                 print("Chưa có đơn hàng")
                 continue
-            print("DANH SÁCH ĐƠN HÀNG")
+            print("\n===== DANH SÁCH ĐƠN HÀNG =====")
             for i,order in enumerate(list_orders, start=1):#dùng enumerate duyệt cái phần tử trong tuple, list, dict qua for
                 print(f"{i}. Mã đơn {order['ID']}")
                 print(f"Khách hàng   :{order['Họ và tên']}")
