@@ -22,7 +22,7 @@ table_data={
 }
 
 def see_table():
-    print("\nDANH SÁCH BÀN")
+    print("\n===== DANH SÁCH BÀN =====")
     for cat, items in table_data.items():
         table=[]
         for i in items:
@@ -30,4 +30,3 @@ def see_table():
         header=["Mã", "Số Ghế", "Tình trạng"]
         print(f"\n----- {cat.upper()} -----")
         print(tabulate(table, headers=header, tablefmt="fancy_grid"))
-
