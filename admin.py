@@ -31,7 +31,8 @@ def add_dish():
     dish=(code, name, taste, price, status, quantity)
     dish_data.setdefault(cat, []).append(dish)#lấy giá trị trả về trong trường hợp key không tồn tại
     print(f"Đã thêm {code} - {name} vào nhóm {cat}")
-    
+
+#xóa món ăn khỏi menu
 def remove_dish():
     code=input("Nhập mã món cần xóa: ").strip().upper()
     cat, index, i=find_dish(code)#cat tên danh mục, index, vị trí món trong list, i thông tin của món ăn
@@ -111,7 +112,7 @@ def management_staff():
         print("2. Thêm nhân viên")
         print("3. Xóa nhân viên")
         print("0. Thoát")
-        choose=input("Chọn(0-4): ")
+        choose=input("Chọn(0-3): ")
 
         if choose=='1':
             see_staff()
@@ -131,7 +132,7 @@ def management_menu():
         print("3. Xóa món")
         print("4. Cập nhật món")
         print("0. Thoát!")
-        choose=input("Chọn(0-3): ")
+        choose=input("Chọn(0-4): ")
 
         if choose=='1':
             see_menu()
@@ -145,19 +146,22 @@ def management_menu():
             break
 
 #admin chọn chức năng quản lý của mình
-def admin_control():
+def admin_menu(admin):
     while True:
-        print("\nLỰA CHỌN CỦA ADMIN")
+        print("\n===== LỰA CHỌN CỦA ADMIN =====")
         print("1. Quản lý món ăn")
         print("2. Quản lý nhân viên")
         print("0. Thoát")
-        choose=input("Chọn(0-2): ")
+        choose=input("Chọn(0-4): ")
         if choose=='1':
             management_menu()
         elif choose=='2':
             management_staff()
-        else:
+        elif choose=='0':
             break
+        else:
+            print("Lựa chọn không hợp lệ!")
+
 
 
         
