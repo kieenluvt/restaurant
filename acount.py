@@ -31,7 +31,6 @@ def register():
     if role=='1':
         user=Customer(name, phone, email, password, gender)
         acount_customer.append(user)
-        print("Đăng ký customer thành công")
         return user
 
     #role staff
